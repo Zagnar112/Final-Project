@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpikeBall Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 1330407642057107587, guid: 63c76cfb42cea0e429cc31b49501da0e, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -62,6 +66,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1330407642057107587, guid: 63c76cfb42cea0e429cc31b49501da0e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5622386070455846500}
+    - targetCorrespondingSourceObject: {fileID: 1330407642057107587, guid: 63c76cfb42cea0e429cc31b49501da0e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -2846211276717867608}
   m_SourcePrefab: {fileID: 100100000, guid: 63c76cfb42cea0e429cc31b49501da0e, type: 3}
 --- !u!1 &5993446032927160987 stripped
 GameObject:
@@ -80,8 +87,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c2a964c044135543ba8047a7a17adaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bouncing
-  bounceHeight: 2
-  bounceSpeed: 2
+  baseBounceHeight: 2
+  baseBounceSpeed: 2
+  heightRandomRange: 0.5
+  speedRandomRange: 0.5
 --- !u!54 &5622386070455846500
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -109,3 +118,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!135 &-2846211276717867608
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5993446032927160987}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
