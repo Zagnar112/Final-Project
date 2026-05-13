@@ -23,7 +23,7 @@ public class MenuHandler : MonoBehaviour
 
     void LoadGameScene()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Game Scene");
     }
 
     void QuitGame()
