@@ -62,35 +62,19 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1330407642057107587, guid: 63c76cfb42cea0e429cc31b49501da0e, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 9096696080485498476}
-    - targetCorrespondingSourceObject: {fileID: 1330407642057107587, guid: 63c76cfb42cea0e429cc31b49501da0e, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 5622386070455846500}
     - targetCorrespondingSourceObject: {fileID: 1330407642057107587, guid: 63c76cfb42cea0e429cc31b49501da0e, type: 3}
       insertIndex: -1
       addedObject: {fileID: -2846211276717867608}
+    - targetCorrespondingSourceObject: {fileID: 1330407642057107587, guid: 63c76cfb42cea0e429cc31b49501da0e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6255760172577174385}
   m_SourcePrefab: {fileID: 100100000, guid: 63c76cfb42cea0e429cc31b49501da0e, type: 3}
 --- !u!1 &5993446032927160987 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1330407642057107587, guid: 63c76cfb42cea0e429cc31b49501da0e, type: 3}
   m_PrefabInstance: {fileID: 4709201541794337304}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &9096696080485498476
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5993446032927160987}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c2a964c044135543ba8047a7a17adaa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Bouncing
-  baseBounceHeight: 2
-  baseBounceSpeed: 2
-  heightRandomRange: 0.5
-  speedRandomRange: 0.5
 --- !u!54 &5622386070455846500
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -139,3 +123,19 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6255760172577174385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5993446032927160987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c2a964c044135543ba8047a7a17adaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bouncing
+  baseBounceHeight: 2
+  baseBounceSpeed: 2
+  heightRandomRange: 0.5
+  speedRandomRange: 0.5
