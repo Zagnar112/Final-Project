@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class ObstacleSpawner : MonoBehaviour
 {
+    [Header("Obstacles In This Segment")]
     public List<GameObject> obstaclePool = new List<GameObject>();
-    // Add your 10 inactive obstacles here
 
     [Header("Difficulty Settings")]
     public float difficultyIncreaseTime = 15f;
@@ -14,14 +14,21 @@ public class ObstacleSpawner : MonoBehaviour
     public int thresholdDecreaseAmount = 5;
     public int minimumThreshold = 20;
 
-    private int currentThreshold;
-    private float timer;
+    private static int currentThreshold;
+    private static float timer;
+
+    private static bool initialized = false;
 
     void Start()
     {
-        currentThreshold = startingThreshold;
+        // Initialize ONLY ONCE globally
+        if (!initialized)
+        {
+            currentThreshold = startingThreshold;
+            initialized = true;
+        }
 
-        // Make sure all obstacles start inactive
+        // Turn all obstacles off first
         foreach (GameObject obstacle in obstaclePool)
         {
             obstacle.SetActive(false);
@@ -32,7 +39,7 @@ public class ObstacleSpawner : MonoBehaviour
 
     void Update()
     {
-        // Increase difficulty over time
+        // Shared global difficulty timer
         timer += Time.deltaTime;
 
         if (timer >= difficultyIncreaseTime)
@@ -50,14 +57,12 @@ public class ObstacleSpawner : MonoBehaviour
         }
     }
 
-    // Call this whenever a new track segment appears
-    public void ActivateObstacles()
+    void ActivateObstacles()
     {
         int activateCounter = 0;
 
-        // FIRST LOOP
-        // Roll 10 times
-        for (int i = 0; i < 10; i++)
+        // Roll once per obstacle slot
+        for (int i = 0; i < obstaclePool.Count; i++)
         {
             int randomValue = Random.Range(1, 101);
 
@@ -67,32 +72,21 @@ public class ObstacleSpawner : MonoBehaviour
             }
         }
 
-
-        // TEMP INDEX LIST
+        // Copy list
         List<GameObject> availableObstacles =
             new List<GameObject>(obstaclePool);
 
-        // Turn everything OFF first
-        foreach (GameObject obstacle in obstaclePool)
-        {
-            obstacle.SetActive(false);
-        }
-
-        // SECOND LOOP
+        // Activate random obstacles
         for (int i = 0; i < activateCounter; i++)
         {
-            // Stop if nothing remains
             if (availableObstacles.Count <= 0)
                 break;
 
-            // Pick random remaining obstacle
             int randomIndex =
                 Random.Range(0, availableObstacles.Count);
 
-            // Activate selected obstacle
             availableObstacles[randomIndex].SetActive(true);
 
-            // Remove used obstacle
             availableObstacles.RemoveAt(randomIndex);
         }
     }

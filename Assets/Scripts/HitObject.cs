@@ -23,7 +23,7 @@ public class HitObject : MonoBehaviour
         // Check if collided object has the "Obstacle" tag
         if (other.CompareTag("Obstacle"))
         {
-            //SceneManager.LoadScene(endScreen);
+            SceneManager.LoadScene("EndScreen");
         }
     }
 }
